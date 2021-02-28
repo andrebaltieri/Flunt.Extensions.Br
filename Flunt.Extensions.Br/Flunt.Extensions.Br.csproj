@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
 
     <PackageId>Flunt.Extensions.Br</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <icon>https://baltaio.blob.core.windows.net/static/images/icons/flunt-icon.png</icon>
     <License>MIT</License>
     <Authors>André Baltieri</Authors>

@@ -44,11 +44,19 @@ namespace Flunt.Extensions.Br.Tests
 
                 // VALID
                 .IsCarPlate("FCZ1234", "CarPlate 15")
-                .IsCarPlate("FCZ1234", "CarPlate 16", "Custom error message");
+                .IsCarPlate("FCZ1234", "CarPlate 16", "Custom error message")
+
+                // INVALID
+                .IsCarPlate("FCZ-12345", "CarPlate 17")
+                .IsCarPlate("FCZ-12345", "CarPlate 18", "Custom error message")
+
+                // INVALID
+                .IsCarPlate("FCZA-1234", "CarPlate 19")
+                .IsCarPlate("FCZA-1234", "CarPlate 20", "Custom error message");
 
 
             Assert.AreEqual(false, contract.IsValid);
-            Assert.AreEqual(contract.Notifications.Count, 12);
+            Assert.AreEqual(contract.Notifications.Count, 16);
         }
 
         [TestCategory("Car Validation")]
@@ -88,10 +96,22 @@ namespace Flunt.Extensions.Br.Tests
 
                 // VALID
                 .IsMercosulCarPlate("GAG1A11", "CarPlate 15")
-                .IsMercosulCarPlate("GAG1A11", "CarPlate 16", "Custom error message");
+                .IsMercosulCarPlate("GAG1A11", "CarPlate 16", "Custom error message")
+
+                // INVALID
+                .IsMercosulCarPlate("LMA-0I11A", "CarPlate 17")
+                .IsMercosulCarPlate("LMA-0I11A", "CarPlate 18", "Custom error message")
+
+                // INVALID
+                .IsMercosulCarPlate("LMA-0I111", "CarPlate 19")
+                .IsMercosulCarPlate("LMA-0I111", "CarPlate 20", "Custom error message")
+
+                // INVALID
+                .IsMercosulCarPlate("ALMA-0I11", "CarPlate 21")
+                .IsMercosulCarPlate("ALMA-0I11", "CarPlate 22", "Custom error message");
 
             Assert.AreEqual(false, contract.IsValid);
-            Assert.AreEqual(contract.Notifications.Count, 12);
+            Assert.AreEqual(contract.Notifications.Count, 18);
         }
     }
 }

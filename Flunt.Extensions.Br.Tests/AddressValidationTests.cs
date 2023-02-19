@@ -44,14 +44,25 @@ namespace Flunt.Extensions.Br.Tests
 
                 // INVALID
                 .IsZipCode("13400000", "ZipCode")
-                .IsZipCode("13400000", "ZipCode", "Custom error message");
+                .IsZipCode("13400000", "ZipCode", "Custom error message")
 
+                // INVALID
+                .IsZipCode("13400-0000", "ZipCode")
+                .IsZipCode("13400-0000", "ZipCode", "Custom error message")
+
+                // INVALID
+                .IsZipCode("13400-00000", "ZipCode")
+                .IsZipCode("13400-00000", "ZipCode", "Custom error message")
+
+                // INVALID
+                .IsZipCode("134000-000", "ZipCode")
+                .IsZipCode("134000-000", "ZipCode", "Custom error message");
 
             Assert.AreEqual(false, contract.IsValid);
-            Assert.AreEqual(contract.Notifications.Count, 14);
+            Assert.AreEqual(contract.Notifications.Count, 20);
         }
 
-        [TestCategory("ZipCode Validation")]
+        [TestCategory("State Validation")]
         [TestMethod("Requires a string is a state")]
         public void IsState()
         {
@@ -95,7 +106,7 @@ namespace Flunt.Extensions.Br.Tests
             Assert.AreEqual(contract.Notifications.Count, 12);
         }
 
-        [TestCategory("ZipCode Validation")]
+        [TestCategory("Country Validation")]
         [TestMethod("Requires a string is a country")]
         public void IsCountry()
         {
@@ -119,8 +130,8 @@ namespace Flunt.Extensions.Br.Tests
                 .IsCountry("ABCDE", "Country 08", "Custom error message")
 
                 // INVALID
-                .IsState("1340", "Country 09")
-                .IsState("1340", "Country 10", "Custom error message")
+                .IsCountry("1340", "Country 09")
+                .IsCountry("1340", "Country 10", "Custom error message")
 
                 // INVALID
                 .IsCountry("SP", "Country 11")

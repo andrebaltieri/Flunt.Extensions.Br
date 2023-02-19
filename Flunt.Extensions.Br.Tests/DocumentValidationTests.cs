@@ -47,12 +47,12 @@ namespace Flunt.Extensions.Br.Tests
                 .IsCpf("48042595034", "CPF 16", "Custom error message")
 
                 // INVALID
-                .IsCpf("48042595035", "CPF 15")
-                .IsCpf("48042595035", "CPF 16", "Custom error message")
+                .IsCpf("48042595035", "CPF 17")
+                .IsCpf("48042595035", "CPF 18", "Custom error message")
 
                 // INVALID
-                .IsCpf("35245678901", "CPF 15")
-                .IsCpf("35245678901", "CPF 16", "Custom error message");
+                .IsCpf("35245678901", "CPF 19")
+                .IsCpf("35245678901", "CPF 20", "Custom error message");
 
 
             Assert.AreEqual(false, contract.IsValid);
@@ -99,12 +99,12 @@ namespace Flunt.Extensions.Br.Tests
                 .IsCnpj("84752242000121", "CNPJ 16", "Custom error message")
 
                 // INVALID
-                .IsCnpj("57914838000102", "CNPJ 15")
-                .IsCnpj("57914838000102", "CNPJ 16", "Custom error message")
+                .IsCnpj("57914838000102", "CNPJ 17")
+                .IsCnpj("57914838000102", "CNPJ 18", "Custom error message")
 
                 // INVALID
-                .IsCnpj("57914838880102", "CNPJ 15")
-                .IsCnpj("57914838880102", "CNPJ 16", "Custom error message");
+                .IsCnpj("57914838880102", "CNPJ 19")
+                .IsCnpj("57914838880102", "CNPJ 20", "Custom error message");
 
 
             Assert.AreEqual(false, contract.IsValid);
@@ -223,12 +223,12 @@ namespace Flunt.Extensions.Br.Tests
                 .IsElectoralCard("312467822267", "TEST 16", "Custom error message")
 
                 // INVALID
-                .IsElectoralCard("885760042208", "TEST 15")
-                .IsElectoralCard("885760042208", "TEST 16", "Custom error message")
+                .IsElectoralCard("885760042208", "TEST 17")
+                .IsElectoralCard("885760042208", "TEST 18", "Custom error message")
 
                 // INVALID
-                .IsElectoralCard("144638422291", "TEST 15")
-                .IsElectoralCard("144638422291", "TEST 16", "Custom error message");
+                .IsElectoralCard("144638422291", "TEST 19")
+                .IsElectoralCard("144638422291", "TEST 20", "Custom error message");
 
 
             Assert.AreEqual(false, contract.IsValid);
